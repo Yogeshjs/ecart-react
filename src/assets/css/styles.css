@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+}
+
+.login-container {
+  border: 1px solid black;
+}
+
+.hero-content {
+  height: 48px;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-content p {
+  font-size: 0.875rem;
+}
+
+.hero-content p:last-child {
+  font-weight: 600;
+  padding-left: 8px;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 96px;
+  padding-top: 40px;
+  padding-bottom: 16px;
+}
+
+.navigation .search {
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+}
