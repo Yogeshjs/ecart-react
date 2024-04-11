@@ -9,7 +9,8 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "prepare": "husky",
-    "test": "echo super woof!"
+    "test": "echo super woof!",
+    "generate-icon": "./component_generator/generate_icons.sh"
   },
   "lint-staged": {
     "*.{js, jsx,ts,tsx}": [
