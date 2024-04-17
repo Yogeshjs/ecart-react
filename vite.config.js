@@ -9,7 +9,8 @@ export default defineConfig({
       icon: '/src/assets/images',
       pages: '/src/pages',
       shared: '/src/shared',
-      images: '/src/assets/images'
+      images: '/src/assets/images',
+      components: '/src/components'
     }
   }
 });
