@@ -2,20 +2,26 @@ import { useState } from 'react';
 import { useCart } from 'shared/store/useCart';
 import { HeartSmallIcon } from 'shared/ui/icons/HeartSmallIcon';
 
+import { useDispatch, useSelector } from 'react-redux';
+
+import { getCart, addToCart, removeFromCart } from 'shared/store/slices/cartSlice';
+
 export function ProductCard({ productDetails }) {
   const [toggleCartBtn, setToggleCartBtn] = useState(false);
 
   const { brand, category, id, price, thumbnail, title } = productDetails;
 
-  const { cart, dispatchCart } = useCart();
+  // const { cart, dispatchCart } = useCart();
 
-  console.log('cart ::', cart);
+  const dispatch = useDispatch();
+
+  const cart = useSelector(getCart);
 
   const handleAddCart = () => {
     if (!toggleCartBtn) {
-      dispatchCart({ type: 'ADD_TO_CART', action: productDetails });
+      dispatch(addToCart(productDetails));
     } else {
-      dispatchCart({ type: 'REMOVE_FROM_CART', action: { id } });
+      dispatch(removeFromCart(productDetails));
     }
     setToggleCartBtn((toggleBtn) => !toggleBtn);
   };

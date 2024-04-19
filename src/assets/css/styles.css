@@ -595,3 +595,39 @@ main.wishlist-container .product-row .container {
   width: 24px;
   height: 24px;
 }
+
+.cart-dropdown-container {
+  position: absolute;
+  right: 0;
+  margin-top: 45px;
+  width: 224px;
+  height: 208px;
+  border-radius: 4px;
+  -webkit-backdrop-filter: blur(150px);
+  backdrop-filter: blur(150px);
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 10px 20px;
+}
+
+.cart-dropdown-container .account-dropdown-item {
+  justify-content: space-around;
+}
+
+.cart-dropdown-qty-btn {
+  width: 10px;
+  height: 10px;
+}
+
+.cart-dropdown-container .ellipse {
+  width: 20px;
+  height: 20px;
+}
+
+.cart-dropdown-container .ellipse:first-child {
+  margin-right: 10px;
+}
+
+.account-dropdown-item .ellipse:hover {
+  background-color: #db4444;
+  cursor: pointer;
+}

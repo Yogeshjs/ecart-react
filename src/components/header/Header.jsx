@@ -1,9 +1,23 @@
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
+
+import { getCartItemsCount } from 'shared/store/slices/cartSlice';
+
 import { WishListIcon } from 'shared/ui/icons/WishlistIcon';
 import { DropDownIcon } from 'shared/ui/icons/DropDownIcon';
 import { SearchIcon } from 'shared/ui/icons/SearchIcon';
 import { CartWithBuyIcon } from 'shared/ui/icons/CartWithBuyIcon';
+import { CartDropDown } from 'components/cart-dropdown';
 
 export function Header() {
+  const [openCartDropdown, setOpenCartDropdown] = useState(false);
+
+  const cartItemCount = useSelector(getCartItemsCount);
+
+  const handleCartDropdown = () => {
+    setOpenCartDropdown((openToggle) => !openToggle);
+  };
+
   return (
     <header className='header'>
       {/* <!-- top header --> */}
@@ -46,9 +60,12 @@ export function Header() {
                 {/* <img src={wishListIcon} /> */}
                 <WishListIcon />
               </div>
-              <div className='icon-container'>
+              <div onClick={handleCartDropdown} className='icon-container'>
                 {/* <img src={cartWithBuyIcon} /> */}
+
                 <CartWithBuyIcon />
+                {cartItemCount ? <div className='wishlist-items-count'>{cartItemCount}</div> : null}
+                {openCartDropdown ? <CartDropDown /> : null}
               </div>
             </div>
           </div>

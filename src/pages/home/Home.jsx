@@ -21,7 +21,7 @@ import { UserAccountDropdownIcon } from 'shared/ui/icons/UserAccountDropdownIcon
 
 import Laptop from 'images/laptop.jpg';
 
-import { ProductCard } from 'components/product_card';
+import { ProductCard } from 'components/product-card';
 
 import { getProducts } from 'shared/api/product';
 
@@ -120,100 +120,9 @@ export function Home() {
         <div className='product-row'>
           <div className='container'>
             {/* <!-- flash sale products --> */}
-
-            <div className='product-card'>
-              <div className='product-img-box'>
-                <div className='product-info-bar'>
-                  <div className='sale-tag'>
-                    <span>-40%</span>
-                  </div>
-                  <div className='ellipse' style={{ backgroundColor: 'white' }}>
-                    {/* <img src="./assets/heart-small.svg" /> */}
-                    <HeartSmallIcon />
-                  </div>
-                </div>
-                <div className='product-image-wrapper'>
-                  {/* <img className="product-images" src="./assets/laptop.jpg" /> */}
-                  <LaptopIcon className='product-images' />
-                </div>
-              </div>
-              {/* <!-- product price rating --> */}
-              <div className='product-content'>
-                <h5>HAVIT HV-G92 Gamepad</h5>
-                <p>
-                  <span className='product-price'>$120</span>
-                  <span
-                    className='product-price'
-                    style={{ textDecoration: 'lineThrough', color: '#000', opacity: 0.5 }}
-                  >
-                    $160
-                  </span>
-                </p>
-                <div className='product-add-cart'>
-                  <p>Add To Cart</p>
-                </div>
-              </div>
-            </div>
-
-            <div className='product-card'>
-              <div className='product-img-box'>
-                <div className='product-info-bar'>
-                  <div className='sale-tag'>
-                    <span>-40%</span>
-                  </div>
-                  <div className='ellipse' style={{ backgroundColor: 'white' }}>
-                    {/* <img src="./assets/heart-small.svg" /> */}
-                    <HeartSmallIcon />
-                  </div>
-                </div>
-              </div>
-              {/* <!-- product price rating --> */}
-              <div className='product-content'>
-                <h5>AK-900 Wired Keyboard</h5>
-                <p>
-                  <span className='product-price'>$960</span>
-                  <span
-                    className='product-price'
-                    style={{ textDecoration: 'line-through', color: '#000', opacity: 0.5 }}
-                  >
-                    $1160
-                  </span>
-                </p>
-                <div className='product-add-cart'>
-                  <p>Add To Cart</p>
-                </div>
-              </div>
-            </div>
-
-            <div className='product-card'>
-              <div className='product-img-box'>
-                <div className='product-info-bar'>
-                  <div className='sale-tag'>
-                    <span>-40%</span>
-                  </div>
-                  <div className='ellipse' style={{ backgroundColor: 'white' }}>
-                    {/* <img src="./assets/heart-small.svg" /> */}
-                    <HeartSmallIcon />
-                  </div>
-                </div>
-              </div>
-              {/* <!-- product price rating --> */}
-              <div className='product-content'>
-                <h5>IPS LCD Gaming Monitor</h5>
-                <p>
-                  <span className='product-price'>$370</span>
-                  <span
-                    className='product-price'
-                    style={{ textDecoration: 'line-through', color: '#000', opacity: 0.5 }}
-                  >
-                    $400
-                  </span>
-                </p>
-                <div className='product-add-cart'>
-                  <p>Add To Cart</p>
-                </div>
-              </div>
-            </div>
+            {productsData.map((product) => {
+              return <ProductCard key={product.id} productDetails={product} />;
+            })}
           </div>
         </div>
       </div>

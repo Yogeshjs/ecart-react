@@ -6,6 +6,8 @@ import { Login } from 'pages/login/Login';
 
 import { Header } from 'components/header';
 import { Footer } from 'components/footer';
+import { ProductedRoute } from 'components/protected-route';
+import { DefaultRoute } from 'components/default-route';
 
 import { CartProvider } from 'shared/store/CartProvider';
 
@@ -15,8 +17,22 @@ function App() {
       <Header />
       <CartProvider>
         <Routes>
-          <Route path='/' element={<Login />} />
-          <Route path='/home' element={<Home />} />
+          <Route
+            path='/'
+            element={
+              <DefaultRoute defaultPath='/home'>
+                <Login />
+              </DefaultRoute>
+            }
+          />
+          <Route
+            path='/home'
+            element={
+              <ProductedRoute>
+                <Home />
+              </ProductedRoute>
+            }
+          />
         </Routes>
       </CartProvider>
       <Footer />
