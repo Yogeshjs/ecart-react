@@ -33,6 +33,21 @@ function App() {
               </ProductedRoute>
             }
           />
+          <Route
+            path='*'
+            element={
+              <div
+                style={{
+                  height: '100vh',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}
+              >
+                <h3>Page Not Found 404</h3>
+              </div>
+            }
+          />
         </Routes>
       </CartProvider>
       <Footer />

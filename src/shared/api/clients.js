@@ -5,14 +5,14 @@ import { userLogout } from 'shared/store/slices/authSlice';
 import isJwtTokenExpired from 'jwt-check-expiry';
 
 export const productClient = axios.create({
-  baseURL: import.meta.env.VITE_PRODUCT_URL,
+  baseURL: import.meta.env.VITE_BASE_URL,
   headers: {
     'Content-Type': 'application/json'
   }
 });
 
 export const authClient = axios.create({
-  baseURL: import.meta.env.VITE_PRODUCT_URL,
+  baseURL: import.meta.env.VITE_BASE_URL,
   headers: {
     'Content-Type': 'application/json'
   }
